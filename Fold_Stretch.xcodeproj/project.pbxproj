@@ -15,6 +15,10 @@
 		5F7F452F1CA908910067067D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F452D1CA908910067067D /* LaunchScreen.storyboard */; };
 		5F7F453A1CA908910067067D /* Fold_StretchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F45391CA908910067067D /* Fold_StretchTests.m */; };
 		5F7F45451CA908910067067D /* Fold_StretchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F45441CA908910067067D /* Fold_StretchUITests.m */; };
+		5FCAFDCE1CAA5953005651F6 /* TopicDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAFDCC1CAA5953005651F6 /* TopicDetailHeaderView.m */; };
+		5FCAFDCF1CAA5953005651F6 /* TopicDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFDCD1CAA5953005651F6 /* TopicDetailHeaderView.xib */; };
+		5FCAFDD21CAA5C1E005651F6 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAFDD11CAA5C1E005651F6 /* TopicModel.m */; };
+		5FCAFDD51CAA5CFA005651F6 /* BasicUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAFDD41CAA5CFA005651F6 /* BasicUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,13 @@
 		5F7F45401CA908910067067D /* Fold_StretchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Fold_StretchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7F45441CA908910067067D /* Fold_StretchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fold_StretchUITests.m; sourceTree = "<group>"; };
 		5F7F45461CA908910067067D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FCAFDCB1CAA5953005651F6 /* TopicDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDetailHeaderView.h; sourceTree = "<group>"; };
+		5FCAFDCC1CAA5953005651F6 /* TopicDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDetailHeaderView.m; sourceTree = "<group>"; };
+		5FCAFDCD1CAA5953005651F6 /* TopicDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicDetailHeaderView.xib; sourceTree = "<group>"; };
+		5FCAFDD01CAA5C1E005651F6 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
+		5FCAFDD11CAA5C1E005651F6 /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
+		5FCAFDD31CAA5CFA005651F6 /* BasicUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicUtility.h; sourceTree = "<group>"; };
+		5FCAFDD41CAA5CFA005651F6 /* BasicUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +112,13 @@
 		5F7F451E1CA908900067067D /* Fold_Stretch */ = {
 			isa = PBXGroup;
 			children = (
+				5FCAFDD31CAA5CFA005651F6 /* BasicUtility.h */,
+				5FCAFDD41CAA5CFA005651F6 /* BasicUtility.m */,
+				5FCAFDD01CAA5C1E005651F6 /* TopicModel.h */,
+				5FCAFDD11CAA5C1E005651F6 /* TopicModel.m */,
+				5FCAFDCB1CAA5953005651F6 /* TopicDetailHeaderView.h */,
+				5FCAFDCC1CAA5953005651F6 /* TopicDetailHeaderView.m */,
+				5FCAFDCD1CAA5953005651F6 /* TopicDetailHeaderView.xib */,
 				5F7F45221CA908900067067D /* AppDelegate.h */,
 				5F7F45231CA908900067067D /* AppDelegate.m */,
 				5F7F45251CA908900067067D /* ViewController.h */,
@@ -243,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FCAFDCF1CAA5953005651F6 /* TopicDetailHeaderView.xib in Resources */,
 				5F7F452F1CA908910067067D /* LaunchScreen.storyboard in Resources */,
 				5F7F452C1CA908900067067D /* Assets.xcassets in Resources */,
 				5F7F452A1CA908900067067D /* Main.storyboard in Resources */,
@@ -270,9 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FCAFDD21CAA5C1E005651F6 /* TopicModel.m in Sources */,
+				5FCAFDCE1CAA5953005651F6 /* TopicDetailHeaderView.m in Sources */,
 				5F7F45271CA908900067067D /* ViewController.m in Sources */,
 				5F7F45241CA908900067067D /* AppDelegate.m in Sources */,
 				5F7F45211CA908900067067D /* main.m in Sources */,
+				5FCAFDD51CAA5CFA005651F6 /* BasicUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Fold_Stretch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.meelive.Fold-Stretch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Fold_Stretch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.meelive.Fold-Stretch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +520,7 @@
 				5F7F454B1CA908910067067D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F7F454C1CA908910067067D /* Build configuration list for PBXNativeTarget "Fold_StretchTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +529,7 @@
 				5F7F454E1CA908910067067D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F7F454F1CA908910067067D /* Build configuration list for PBXNativeTarget "Fold_StretchUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +538,7 @@
 				5F7F45511CA908910067067D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
