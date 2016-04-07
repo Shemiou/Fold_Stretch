@@ -16,6 +16,7 @@
 
 @property(weak, nonatomic) IBOutlet NSLayoutConstraint *moreBtnToLeft;
 @property(weak, nonatomic) IBOutlet NSLayoutConstraint *descLabelWidth;
+@property(weak, nonatomic) IBOutlet NSLayoutConstraint *moreBtnNextLine;
 
 @property(weak, nonatomic) IBOutlet UIButton *moreButton;
 @property(weak, nonatomic) IBOutlet UILabel *descLabel;
@@ -50,6 +51,7 @@
 - (void)_desLabelArray {
   _descLabel.text = nil;
   _moreButton.hidden = YES;
+  _moreBtnNextLine.constant = 0;
   UIFont *font = [UIFont systemFontOfSize:17.0];
   NSArray *textArray = [[NSArray alloc]
       initWithArray:[BasicUtility getSeparatedLinesFromLabelText:_model.desc
@@ -69,35 +71,47 @@
     if (_model.showMore) {
       _descLabel.text = _describeText;
       self.descLabel.numberOfLines = 0;
-
     } else {
       self.descLabel.numberOfLines = 2;
 
       NSInteger subIndex =
           (DescLabelWidth / [_model textOneLine].width) * TOPIC.length * 2 - 6;
 
-      NSInteger btnIndex =
-          (DescLabelWidth / [_model textOneLine].width) * TOPIC.length - 4;
       subIndex = MIN(subIndex, _describeText.length);
-      btnIndex = MIN(btnIndex, _describeText.length);
-      NSString *btnString = [_describeText substringToIndex:btnIndex];
+
       NSString *string = [_describeText substringToIndex:subIndex];
       NSString *stringLess = [string stringByAppendingString:@"..."];
 
       self.descLabel.text = stringLess;
+    }
+    NSInteger btnIndex =
+        (DescLabelWidth / [_model textOneLine].width) * TOPIC.length - 4;
+    btnIndex = MIN(btnIndex, _describeText.length);
+    NSString *btnString = [_describeText substringToIndex:btnIndex];
+    _moreBtnToLeft.constant =
+        [BasicUtility returnLabelWidthWithFont:[UIFont systemFontOfSize:17.0]
+                                 maxSizeHeight:[_model textOneLine].height
+                                          text:btnString]
+            .width;
+    if (_model.showMore) {
+      NSString *lastString = [textArray lastObject];
       _moreBtnToLeft.constant =
           [BasicUtility returnLabelWidthWithFont:[UIFont systemFontOfSize:17.0]
                                    maxSizeHeight:[_model textOneLine].height
-                                            text:btnString]
+                                            text:lastString]
               .width;
+      if (_moreBtnToLeft.constant >= DescLabelWidth - 48) {
+        _moreBtnToLeft.constant = 0;
+        _moreBtnNextLine.constant = 16;
+      }
     }
   }
 }
 
 - (IBAction)moreAboutDescribe:(id)sender {
-  [_moreButton setTitle:[self moreShow] forState:UIControlStateNormal];
   _descLabel.userInteractionEnabled = YES;
   _showMore = !_showMore;
+  [_moreButton setTitle:[self moreShow] forState:UIControlStateNormal];
 
   if (self.ShowMoreText) {
     self.ShowMoreText(_showMore);
@@ -106,7 +120,7 @@
 }
 
 - (NSString *)moreShow {
-  if (!_model.showMore) {
+  if (!_showMore) {
     return @"[更多]";
   } else {
     return @"[收起]";

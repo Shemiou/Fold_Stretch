@@ -24,18 +24,7 @@
   // Do any additional setup after loading the view, typically from a nib.
   _headerModel = [[TopicModel alloc] init];
   _headerModel.showMore = NO;
-  _headerModel.desc =
-      @"今"
-      @"天"
-      @"星"
-      @"期"
-      @"几"
-      @"今天星期几今天星期几今天星期几今天星期几今天星"
-      @"期"
-      @"几"
-      @"今"
-      @"天"
-      @"星期几。今天星期几今天星期几今天星期几今天星期几今天星今天星期几今天星期几今天星期几今天星期几今天星今天星期几今天星期几今天星期几今天星期几今天星";
+  _headerModel.desc =@"今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几";
   [self createHeaderView];
 }
 
