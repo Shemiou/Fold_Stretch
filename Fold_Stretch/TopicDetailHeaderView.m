@@ -71,6 +71,17 @@
     if (_model.showMore) {
       _descLabel.text = _describeText;
       self.descLabel.numberOfLines = 0;
+      NSString *lastString = [textArray lastObject];
+      _moreBtnToLeft.constant =
+          [BasicUtility returnLabelWidthWithFont:[UIFont systemFontOfSize:17.0]
+                                   maxSizeHeight:[_model textOneLine].height
+                                            text:lastString]
+              .width;
+      if (_moreBtnToLeft.constant >= DescLabelWidth - 48) {
+        _moreBtnToLeft.constant = 0;
+        _moreBtnNextLine.constant = 16;
+      }
+
     } else {
       self.descLabel.numberOfLines = 2;
 
@@ -83,27 +94,15 @@
       NSString *stringLess = [string stringByAppendingString:@"..."];
 
       self.descLabel.text = stringLess;
-    }
-    NSInteger btnIndex =
-        (DescLabelWidth / [_model textOneLine].width) * TOPIC.length - 4;
-    btnIndex = MIN(btnIndex, _describeText.length);
-    NSString *btnString = [_describeText substringToIndex:btnIndex];
-    _moreBtnToLeft.constant =
-        [BasicUtility returnLabelWidthWithFont:[UIFont systemFontOfSize:17.0]
-                                 maxSizeHeight:[_model textOneLine].height
-                                          text:btnString]
-            .width;
-    if (_model.showMore) {
-      NSString *lastString = [textArray lastObject];
+      NSInteger btnIndex =
+          (DescLabelWidth / [_model textOneLine].width) * TOPIC.length - 4;
+      btnIndex = MIN(btnIndex, _describeText.length);
+      NSString *btnString = [_describeText substringToIndex:btnIndex];
       _moreBtnToLeft.constant =
           [BasicUtility returnLabelWidthWithFont:[UIFont systemFontOfSize:17.0]
                                    maxSizeHeight:[_model textOneLine].height
-                                            text:lastString]
+                                            text:btnString]
               .width;
-      if (_moreBtnToLeft.constant >= DescLabelWidth - 48) {
-        _moreBtnToLeft.constant = 0;
-        _moreBtnNextLine.constant = 16;
-      }
     }
   }
 }

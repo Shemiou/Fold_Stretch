@@ -24,7 +24,7 @@
   // Do any additional setup after loading the view, typically from a nib.
   _headerModel = [[TopicModel alloc] init];
   _headerModel.showMore = NO;
-  _headerModel.desc =@"今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几";
+  _headerModel.desc =@"今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几今天星期几";
   [self createHeaderView];
 }
 
